@@ -1,0 +1,31 @@
+<nb-card>
+  <nb-card-header>
+      Modification d'un utilisateur:
+  </nb-card-header>
+  <nb-card-body>
+      <form class="form" name="utilisateur" #f="ngForm">
+        <div class="form-group">
+          <label class="label" for="nom">Nom: </label>
+          <input type="text" name="nom"  #nom="ngModel" nbInput  [(ngModel)]="createUserReq.nom" required fullWidth status="basic" placeholder="Chris" required>
+        </div>
+        <div class="form-group">
+          <label class="label" for="email">E-mail: </label>
+          <input type="mail" [textMask]="{mask: emailMask}" #email="ngModel"nbInput fullWidth status="basic"  [(ngModel)]="createUserReq.email"  name="email"placeholder="xxx@yahoo.com" required >
+        </div>
+        <div class="form-group">
+          <label class="label" for="type">Contact: </label>
+          <input type="tel" [textMask]="{mask: mask}" #contact="ngModel" nbInput fullWidth status="basic"[(ngModel)]="createUserReq.contact"  name="contact" placeholder="034 37 876 30" required> 
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-1">
+            <button outline status="primary" nbButton (click)="modifier()">Modifier</button>
+          </div>
+          <div class="offset-sm-4 col-sm-4">
+            <button nbButton outline status="warning" (click)="annuler()">Annuler</button>
+          </div>
+        </div>
+      </form> 
+  </nb-card-body>
+</nb-card>
+<nb-card>
+   
